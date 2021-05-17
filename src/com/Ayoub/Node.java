@@ -1,6 +1,5 @@
 package com.Ayoub;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -16,7 +15,7 @@ public class Node {
         return this.name;
     }
 
-    public void nodeRoute(String route, ArrayList<String> traveledNodes) {
+    public ArrayList<String> nodeRoute(String route, ArrayList<String> traveledNodes) {
         // convert string containing route into charArray
         char[] ch = new char[route.length()];
         for (int i = 0; i < route.length(); i++) {
@@ -57,15 +56,16 @@ public class Node {
                 }
             }
         }
-        System.out.println("After following the given route, we have reached these nodes: " + traveledNodes);
+        System.out.println("After given input, we have reached these states: " + traveledNodes);
+        return traveledNodes;
     }
 
     public String toString(String position, Character route, String node) {
         if (node == null){
-            return route + " is not a valid route from " + position + "\nEnding sequence...\n";
+            return route + " is not a valid input from " + position + "\nEnding sequence...\n";
         }
         else {
-            return "Currently at: " + position + "\nAfter taking route " + route + " we're on: " + node + "\n";
+            return "Currently on: " + position + "\nAfter input " + route + " we're on: " + node + "\n";
         }
     }
 }
