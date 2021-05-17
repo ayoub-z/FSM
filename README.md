@@ -1,4 +1,4 @@
-# Simple Tekst Based FSM.
+# Simple Text Based FSM.
 
 ### **Machine 1**
 
