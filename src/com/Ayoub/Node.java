@@ -34,6 +34,7 @@ public class Node {
             if (counter == 1) {
                 // check if given route (for example 'A') is part of the node we're currently on
                 if(con.containsKey(i)){
+                    System.out.println(toString(getName(),i,con.get(i).getName()));
 
                     // keeps track of nodes we've visited
                     traveledNodes.add(con.get(i).getName());
@@ -44,6 +45,7 @@ public class Node {
             }
             else{
                 if (position.con.containsKey(i)) {
+                    System.out.println(toString(position.getName(),i,position.con.get(i).getName()));
                     traveledNodes.add(position.con.get(i).getName());
                     position = position.con.get(i);
 
@@ -58,5 +60,12 @@ public class Node {
         System.out.println("After following the given route, we have reached these nodes: " + traveledNodes);
     }
 
-
+    public String toString(String position, Character route, String node) {
+        if (node == null){
+            return route + " is not a valid route from " + position + "\nSkipping...\n";
+        }
+        else {
+            return "Currently at: " + position + "\nAfter taking route " + route + " we're on: " + node + "\n";
+        }
+    }
 }
