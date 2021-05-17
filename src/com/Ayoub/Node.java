@@ -62,7 +62,7 @@ public class Node {
 
     public String toString(String currentPosition, Character route, String nextPosition) {
         if (nextPosition == null){
-            return route + " is not a valid input from " + nextPosition + "\nEnding sequence...\n";
+            return route + " is not a valid input from " + currentPosition + "\nEnding sequence...\n";
         }
         else {
             return "Currently on: " + currentPosition + "\nAfter input " + route + " we're on: " + nextPosition + "\n";
