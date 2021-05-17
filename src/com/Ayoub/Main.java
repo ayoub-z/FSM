@@ -19,5 +19,6 @@ public class Main {
         s3.con.put('A',s3);
         s3.con.put('B',s0);
 
+        s0.nodeRoute("ABABBABBAABB", paths);
     }
 }
