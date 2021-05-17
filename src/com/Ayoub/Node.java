@@ -17,7 +17,6 @@ public class Node {
     }
 
     public void nodeRoute(String route, ArrayList<String> traveledNodes) {
-
         // convert string containing route into charArray
         char[] ch = new char[route.length()];
         for (int i = 0; i < route.length(); i++) {
@@ -25,25 +24,26 @@ public class Node {
         }
 
         int counter = 0;
-        // updates which node we're currently on
+
         Node position = con.get(ch[0]);
 
         for (char i : ch) {
             counter++;
-            // if it's the starting node
+            // HARDCODED for the first starting point
             if (counter == 1) {
-                // check if given route (for example 'A') is part of the node we're currently on
+                // check if given route (for example 'A') is a valid route from our position
                 if(con.containsKey(i)){
                     System.out.println(toString(getName(),i,con.get(i).getName()));
 
-                    // keeps track of nodes we've visited
+                    // ArrayList to keep track of nodes we've visited
+                    traveledNodes.add(getName());
                     traveledNodes.add(con.get(i).getName());
 
                     // update the node position we're currently on
                     position = con.get(i);
                 }
             }
-            else{
+            else{ // for each position after the starting point
                 if (position.con.containsKey(i)) {
                     System.out.println(toString(position.getName(),i,position.con.get(i).getName()));
                     traveledNodes.add(position.con.get(i).getName());
