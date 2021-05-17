@@ -51,7 +51,7 @@ public class Node {
 
                 }
                 else {
-//                    System.out.println(toString(position.getName(),i,null));
+                    System.out.println(toString(position.getName(),i,null));
                     traveledNodes.add("e");
                     break;
                 }
@@ -62,7 +62,7 @@ public class Node {
 
     public String toString(String position, Character route, String node) {
         if (node == null){
-            return route + " is not a valid route from " + position + "\nSkipping...\n";
+            return route + " is not a valid route from " + position + "\nEnding sequence...\n";
         }
         else {
             return "Currently at: " + position + "\nAfter taking route " + route + " we're on: " + node + "\n";
