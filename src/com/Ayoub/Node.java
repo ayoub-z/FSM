@@ -60,12 +60,12 @@ public class Node {
         return traveledNodes;
     }
 
-    public String toString(String position, Character route, String node) {
-        if (node == null){
-            return route + " is not a valid input from " + position + "\nEnding sequence...\n";
+    public String toString(String currentPosition, Character route, String nextPosition) {
+        if (nextPosition == null){
+            return route + " is not a valid input from " + nextPosition + "\nEnding sequence...\n";
         }
         else {
-            return "Currently on: " + position + "\nAfter input " + route + " we're on: " + node + "\n";
+            return "Currently on: " + currentPosition + "\nAfter input " + route + " we're on: " + nextPosition + "\n";
         }
     }
 }
